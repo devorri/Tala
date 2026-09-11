@@ -1,5 +1,6 @@
 import { Image } from 'expo-image';
 import { Platform, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { Collapsible } from '@/components/ui/collapsible';
 import { ExternalLink } from '@/components/external-link';
@@ -11,7 +12,8 @@ import { Fonts } from '@/constants/theme';
 
 export default function TabTwoScreen() {
   return (
-    <ParallaxScrollView
+    <SafeAreaView style={styles.safeArea} edges={['top', 'right', 'bottom', 'left']}>
+      <ParallaxScrollView
       headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
       headerImage={
         <IconSymbol
@@ -94,11 +96,15 @@ export default function TabTwoScreen() {
           ),
         })}
       </Collapsible>
-    </ParallaxScrollView>
+      </ParallaxScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
   headerImage: {
     color: '#808080',
     bottom: -90,

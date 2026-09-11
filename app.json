@@ -38,6 +38,17 @@
             "backgroundColor": "#000000"
           }
         }
+      ],
+      "expo-font",
+      "expo-image",
+      "expo-status-bar",
+      "expo-web-browser",
+      "expo-asset",
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Allow TALA to use your microphone for voice farming questions."
+        }
       ]
     ],
     "experiments": {
